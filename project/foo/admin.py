@@ -1,11 +1,10 @@
-from django.contrib import admin
-
 from foo.models import Foo
+
+import htmx_admin as admin
 
 
 @admin.register(Foo)
-class FooAdmin(admin.ModelAdmin):
+class FooAdmin(admin.HTMXAdmin):
+    list_display = ("id", "name")
     search_fields = ("name",)
-    list_display = ("name",)
-
-    change_list_template = "admin/foo/change_list.html"
+    ordering = ("name",)
