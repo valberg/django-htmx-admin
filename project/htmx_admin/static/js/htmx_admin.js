@@ -1,5 +1,8 @@
 function initHtmxAdmin(path) {
     document.addEventListener("DOMContentLoaded", function (event) {
+        // Boost everything
+        document.documentElement.setAttribute("hx-boost", "true");
+
         // If there is a searchbar, make it htmx
         const searchbar = document.getElementById("searchbar");
         if (searchbar) {
